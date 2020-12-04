@@ -11,13 +11,18 @@ from easyAI.Player import Human_Player
 # Se importa time (para dormir la salida por pantalla, útil si solo hay jugadores de IA)
 import time
 
+# Se importa random para generar números aleatorios
+import random
+
 
 # Clase TicTacToeGame, hereda de TwoPlayersGame
 class TicTacToeGame(TwoPlayersGame):
     def __init__(self, players):
-        # Se define el número de jugadores y el turno
+        # Se define el número de jugadores
         self.players = players
-        self.nplayer = 1
+
+        # Se genera el turno aleatorio (1-2)
+        self.nplayer = random.randint(1, 2)
 
         # Se define el tablero de juego (vector de 9 casillas inicializadas a 0)
         self.board = [0] * 9
